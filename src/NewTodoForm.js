@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './NewTodoForm.css'
 
 class newTodoForm extends Component {
     state = {
@@ -12,15 +13,15 @@ class newTodoForm extends Component {
     handleSubmit = (evt) => {
         evt.preventDefault();
         this.props.addTodo(this.state);
-        this.setState({task:""})
+        this.setState({task: ""})
     }
 
     render() {
         return(
-            <div>
+            <div className="NewTodoForm">
                 <form onSubmit={this.handleSubmit}>
                     <input type="text"
-                        placeholder="새로할일"
+                        placeholder="새로할 일"
                         id="task"
                         name="task"
                         onChange={this.handleChange}
